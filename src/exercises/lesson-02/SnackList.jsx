@@ -1,4 +1,4 @@
-export function SnackList() {
+function SnackList() {
   const snacks = [
     { name: 'Popcorn', rank: 5 },
     { name: 'Yogurt', rank: 4 },
@@ -17,3 +17,5 @@ export function SnackList() {
     </ol>
   );
 }
+
+export default SnackList;

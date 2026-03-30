@@ -1,8 +1,8 @@
-import { SnackHeader } from './SnackHeader.jsx';
-import { SnackList } from './SnackList.jsx';
-import { SnackFooter } from './SnackFooter.jsx';
+import SnackHeader from './SnackHeader.jsx';
+import SnackList from './SnackList.jsx';
+import SnackFooter from './SnackFooter.jsx';
 
-export function SnackApp() {
+function SnackApp() {
   return (
     <>
       <SnackHeader />
@@ -11,3 +11,5 @@ export function SnackApp() {
     </>
   );
 }
+
+export default SnackApp;
