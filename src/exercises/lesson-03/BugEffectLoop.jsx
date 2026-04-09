@@ -1,24 +1,20 @@
 //src/exercises/lesson-03/BugEffectLoop.jsx
 
-/* 
-  BUG #1 — Effect Issue 
-
-  This component uses useState and useEffect to update a value.
-  The effect is running on every render, which causes the
-  component to behave incorrectly.
-  */
-
 import { useEffect, useState } from 'react';
 
 export default function BugEffectLoop() {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    setCount(count + 1);
-  });
+    setCount((prev) => prev + 1);
+  }, []);
 
-  return <p>Bug 1 Count: {count}</p>;
+  return <p>Count: {count}</p>;
 }
 
 // Explanation:
-// (Write your explanation here)
+// I used an empty dependency array [] so the effect only runs once when the component mounts.
+// If I left it out, the setCount would trigger a re-render, which would run the effect again,
+// creating an infinite loop. Also, using the functional update (prev => prev + 1) ensures
+// I'm always working with the most recent state value without creating a dependency on the
+// state variable itself.
